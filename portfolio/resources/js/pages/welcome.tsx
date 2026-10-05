@@ -115,7 +115,7 @@ export default function Welcome() {
                                             Voir mes projets
                                             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                         </a>
-                                        <a href="mailto:hello@beyam.dev" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 py-3.5 text-sm font-bold backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white/10">
+                                        <a href="mailto:morelyann10@gmail.com" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-5 py-3.5 text-sm font-bold backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:bg-white/10">
                                             Me contacter
                                         </a>
                                         <a href="/cv-yann-morel-effobi.pdf" download="CV-Yann-Morel-Effobi.pdf" className="col-span-2 inline-flex items-center justify-center gap-2 rounded-full border border-[#65a7ff]/45 bg-[#65a7ff]/10 px-5 py-3.5 text-sm font-bold text-[#9fc8ff] transition duration-300 hover:-translate-y-1 hover:bg-[#65a7ff] hover:text-[#06162d] sm:col-auto">
@@ -134,42 +134,36 @@ export default function Welcome() {
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                                    className="relative hidden min-h-[480px] items-center justify-center lg:flex"
+                                    className="relative hidden min-h-[420px] items-center justify-center overflow-hidden lg:flex"
                                 >
-                                    <motion.div className="absolute h-[390px] w-[390px] rounded-full border border-[#65a7ff]/20" animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}>
-                                        <span className="absolute top-5 left-14 h-3 w-3 rounded-full bg-[#65a7ff] shadow-[0_0_18px_#65a7ff]" />
-                                        <span className="absolute right-2 bottom-28 h-2 w-2 rounded-full bg-white/70" />
-                                    </motion.div>
-                                    <motion.div className="absolute h-[280px] w-[280px] rounded-full border border-dashed border-white/15" animate={{ rotate: -360 }} transition={{ duration: 24, repeat: Infinity, ease: 'linear' }} />
-
-                                    <div className="relative w-full max-w-[470px] overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.08] p-7 shadow-[0_35px_90px_rgba(0,0,0,.28)] backdrop-blur-xl">
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center gap-3">
-                                                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#65a7ff] text-lg font-black text-[#06162d]">B.</div>
-                                                <div><p className="font-bold">BEYAM Studio</p><p className="text-xs text-white/40">Design × Code × Produit</p></div>
-                                            </div>
-                                            <span className="rounded-full border border-[#b7ff5a]/30 bg-[#b7ff5a]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#b7ff5a]">Actif</span>
+                                    <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 -rotate-6 space-y-5">
+                                        <div data-hero-ticker="forward" className="relative overflow-hidden border-y border-[#65a7ff]/25 bg-[#65a7ff] py-5 text-[#06162d] shadow-[0_20px_60px_rgba(53,124,232,.25)]">
+                                            <motion.div className="flex w-max whitespace-nowrap" animate={{ x: ['0%', '-50%'] }} transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}>
+                                                {[0, 1].map((copy) => (
+                                                    <div key={copy} className="flex items-center gap-7 pr-7 text-sm font-black uppercase tracking-[0.2em]">
+                                                        {['Web design', 'Mobile', 'Laravel', 'React', 'UI/UX'].map((label) => (
+                                                            <span key={`${copy}-${label}`} className="flex items-center gap-7">{label}<span className="h-1.5 w-1.5 rounded-full bg-[#06162d]" /></span>
+                                                        ))}
+                                                    </div>
+                                                ))}
+                                            </motion.div>
                                         </div>
 
-                                        <div className="mt-8 grid grid-cols-2 gap-3">
-                                            {[
-                                                ['01', 'Interfaces'],
-                                                ['02', 'Applications'],
-                                                ['03', 'Expériences'],
-                                                ['04', 'Performance'],
-                                            ].map(([number, label], index) => (
-                                                <motion.div key={number} className="rounded-2xl border border-white/10 bg-[#06162d]/55 p-4" animate={{ y: index % 2 === 0 ? [0, -6, 0] : [0, 6, 0] }} transition={{ duration: 4 + index * 0.4, repeat: Infinity, ease: 'easeInOut' }}>
-                                                    <span className="text-xs font-semibold text-[#65a7ff]">{number}</span>
-                                                    <p className="mt-7 text-sm font-semibold text-white/80">{label}</p>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-
-                                        <div className="mt-5 flex items-center justify-between rounded-2xl bg-white px-5 py-4 text-[#06162d]">
-                                            <div><p className="text-sm font-bold">Yann-Morel Effobi</p><p className="text-[10px] uppercase tracking-[0.16em] text-black/40">Développeur créatif</p></div>
-                                            <Code2 className="h-5 w-5" />
+                                        <div data-hero-ticker="reverse" className="relative overflow-hidden border-y border-white/15 bg-white/[0.07] py-4 text-white/70 backdrop-blur-md">
+                                            <motion.div className="flex w-max -translate-x-1/2 whitespace-nowrap" animate={{ x: ['-50%', '0%'] }} transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}>
+                                                {[0, 1].map((copy) => (
+                                                    <div key={copy} className="flex items-center gap-7 pr-7 text-xs font-semibold uppercase tracking-[0.22em]">
+                                                        {['Créer', 'Développer', 'Simplifier', 'Livrer', 'Évoluer'].map((label) => (
+                                                            <span key={`${copy}-${label}`} className="flex items-center gap-7">{label}<span className="text-[#65a7ff]">✦</span></span>
+                                                        ))}
+                                                    </div>
+                                                ))}
+                                            </motion.div>
                                         </div>
                                     </div>
+
+                                    <motion.div className="absolute top-8 right-12 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/[0.08] text-xl font-black backdrop-blur-md" animate={{ y: [0, -10, 0], rotate: [0, 4, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}>B.</motion.div>
+                                    <motion.div className="absolute bottom-8 left-16 rounded-full border border-white/15 bg-[#06162d]/80 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/55 backdrop-blur-md" animate={{ y: [0, 8, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}>Abidjan · Côte d’Ivoire</motion.div>
                                 </motion.div>
                             </div>
                         </div>
@@ -180,103 +174,42 @@ export default function Welcome() {
 
                     <section
                         id="services"
-                        className="relative z-10 scroll-mt-24 bg-[#f4f5f6] px-5 py-20 text-[#07152e] sm:px-8 sm:py-28 lg:px-12"
+                        data-profile-layout="simple-editorial"
+                        className="relative z-10 scroll-mt-24 bg-white px-5 py-20 text-[#111111] sm:px-8 sm:py-28 lg:px-12"
                     >
-                        <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-[1.05fr_0.75fr_0.75fr] lg:grid-rows-2">
-                            <motion.article
-                                initial={{ opacity: 0, y: 45 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                whileHover={{ y: -6 }}
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ duration: 0.6 }}
-                                className="rounded-[2.5rem] bg-[#090909] p-8 text-white shadow-xl shadow-black/10 sm:p-12 lg:row-span-2 lg:p-14"
-                            >
-                                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">
-                                    Profil développeur
-                                </p>
-                                <div className="mt-10 space-y-7 text-lg leading-relaxed text-white/80 sm:text-xl">
-                                    <p>
-                                        Passionné par le développement, je conçois des interfaces modernes
-                                        où logique, simplicité et créativité avancent ensemble.
-                                    </p>
-                                    <p>
-                                        Autodidacte et curieux, j’aime apprendre en expérimentant et transformer
-                                        chaque idée en projet concret.
-                                    </p>
-                                    <p>
-                                        Mon objectif : créer des expériences utiles, soignées et agréables à utiliser.
-                                    </p>
-                                </div>
-                                <a
-                                    href="mailto:hello@beyam.dev"
-                                    className="mt-12 inline-flex rounded-full border border-white/25 px-6 py-3 text-sm font-semibold transition hover:bg-white hover:text-black"
-                                >
-                                    Me contacter
-                                </a>
-                            </motion.article>
+                        <div className="mx-auto max-w-[1500px] border-t border-black/15 pt-8">
+                            <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+                                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.55 }}>
+                                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#357ce8]">À propos</p>
+                                    <h2 className="mt-5 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
+                                        Curieux, autonome et attentif aux détails.
+                                    </h2>
+                                </motion.div>
 
-                            <motion.article
-                                initial={{ opacity: 0, y: 45 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                whileHover={{ y: -6, scale: 1.015 }}
-                                viewport={{ once: true, amount: 0.25 }}
-                                transition={{ duration: 0.6, delay: 0.08 }}
-                                className="flex min-h-[300px] flex-col items-center justify-center rounded-[2.5rem] border border-black/5 bg-white p-8 text-center shadow-sm"
-                            >
-                                <p className="text-6xl font-black tracking-[-0.06em] text-[#357ce8]">03</p>
-                                <p className="mt-5 text-xs font-bold uppercase tracking-[0.16em]">
-                                    disciplines réunies
-                                </p>
-                            </motion.article>
+                                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55, delay: 0.1 }} className="lg:border-l lg:border-black/15 lg:pl-16">
+                                    <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-black/65 sm:text-xl">
+                                        <p>Je développe des interfaces web et mobiles en cherchant toujours le bon équilibre entre simplicité, utilité et qualité visuelle.</p>
+                                        <p>J’apprends en construisant. Chaque projet est une occasion de comprendre un besoin, tester une idée et livrer une solution claire.</p>
+                                    </div>
 
-                            <motion.article
-                                initial={{ opacity: 0, y: 45 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                whileHover={{ y: -6, scale: 1.015 }}
-                                viewport={{ once: true, amount: 0.25 }}
-                                transition={{ duration: 0.6, delay: 0.16 }}
-                                className="flex min-h-[300px] flex-col justify-between rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-sm sm:p-10"
-                            >
-                                <div>
-                                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-black/45">
-                                        Ma méthode
-                                    </p>
-                                    <h3 className="mt-3 text-3xl font-bold tracking-[-0.04em]">
-                                        Penser. Créer. Affiner.
-                                    </h3>
-                                </div>
-                                <p className="mt-10 text-base leading-relaxed text-black/50">
-                                    Une approche simple, du besoin initial jusqu’au produit final.
-                                </p>
-                            </motion.article>
-
-                            <motion.article
-                                initial={{ opacity: 0, y: 45 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ duration: 0.6, delay: 0.12 }}
-                                className="rounded-[2.5rem] border border-black/5 bg-white p-8 shadow-sm sm:p-10 lg:col-span-2"
-                            >
-                                <h3 className="text-3xl font-bold tracking-[-0.04em]">Compétences</h3>
-                                <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
-                                    {['React', 'Laravel', 'TypeScript', 'Tailwind', 'UI/UX', 'Motion'].map((skill, index) => (
-                                        <div key={skill}>
-                                            <div className="flex h-24 items-end overflow-hidden rounded-lg bg-[#f0f1f3]">
-                                                <motion.div
-                                                    className="w-full rounded-t-lg bg-[#111111]"
-                                                    initial={{ height: 0 }}
-                                                    whileInView={{ height: `${52 + (index % 3) * 12}%` }}
-                                                    viewport={{ once: true }}
-                                                    transition={{ duration: 0.7, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                                                />
-                                            </div>
-                                            <p className="mt-3 text-center text-[11px] font-bold uppercase tracking-[0.04em]">
-                                                {skill}
-                                            </p>
+                                    <div className="mt-12 grid gap-8 border-t border-black/15 pt-8 sm:grid-cols-2">
+                                        <div>
+                                            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/40">Méthode</p>
+                                            <p className="mt-3 text-lg font-semibold">Penser · Créer · Affiner</p>
+                                            <p className="mt-2 text-sm leading-relaxed text-black/50">Du besoin initial jusqu’au produit final.</p>
                                         </div>
-                                    ))}
-                                </div>
-                            </motion.article>
+                                        <div>
+                                            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-black/40">Compétences</p>
+                                            <p className="mt-3 text-lg font-semibold">React · Laravel · TypeScript</p>
+                                            <p className="mt-2 text-sm leading-relaxed text-black/50">Tailwind CSS · UI/UX · Motion</p>
+                                        </div>
+                                    </div>
+
+                                    <a href="mailto:morelyann10@gmail.com" className="mt-10 inline-flex items-center gap-2 border-b border-black pb-1 text-sm font-semibold transition hover:text-[#357ce8]">
+                                        Travaillons ensemble <ArrowUpRight className="h-4 w-4" />
+                                    </a>
+                                </motion.div>
+                            </div>
                         </div>
                     </section>
 
@@ -477,7 +410,7 @@ export default function Welcome() {
                         }
                         brandName="BEYAM"
                         socialLinks={[
-                            { icon: <Mail className="h-5 w-5" />, href: 'mailto:hello@beyam.dev', label: 'Envoyer un e-mail' },
+                            { icon: <Mail className="h-5 w-5" />, href: 'mailto:morelyann10@gmail.com', label: 'Envoyer un e-mail' },
                             { icon: <FaLinkedinIn className="h-5 w-5" />, href: 'https://www.linkedin.com/in/yann-morel-effobi-brou-5474782a1', label: 'LinkedIn' },
                             { icon: <SiGithub className="h-5 w-5" />, href: 'https://github.com/shikileliondor/shikileliondor', label: 'GitHub' },
                         ]}

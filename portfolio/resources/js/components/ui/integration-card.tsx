@@ -427,7 +427,7 @@ export function IntegrationCardDemo() {
         visual={<Integration />}
         title="Mon écosystème"
         description="Les outils que je réunis pour concevoir, développer et animer des expériences numériques cohérentes."
-        url="mailto:hello@beyam.dev"
+        url="mailto:morelyann10@gmail.com"
       />
     </div>
   );

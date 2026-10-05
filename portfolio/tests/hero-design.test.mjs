@@ -9,4 +9,7 @@ test('hero uses the approved compact two-direction composition', () => {
     assert.match(source, /initial=\{\{ opacity: 0, x: -50 \}\}/);
     assert.match(source, /initial=\{\{ opacity: 0, x: 50 \}\}/);
     assert.match(source, /text-\[clamp\(2\.25rem,4vw,4rem\)\]/);
+    assert.match(source, /data-hero-ticker="forward"/);
+    assert.match(source, /data-hero-ticker="reverse"/);
+    assert.doesNotMatch(source, /BEYAM Studio/);
 });

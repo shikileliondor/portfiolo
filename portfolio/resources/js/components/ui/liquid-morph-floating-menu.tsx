@@ -107,7 +107,7 @@ export default function LiquidMorphFloatingMenu({ items = [] }: FloatingMenuProp
             transition={{ duration: 0.45, ease }}
         >
             <motion.div
-                className="relative flex flex-col overflow-hidden shadow-[0_22px_70px_rgba(0,0,0,.3)]"
+                className="relative flex max-h-[calc(100dvh-2.5rem)] flex-col overflow-hidden shadow-[0_22px_70px_rgba(0,0,0,.3)]"
                 onClick={() => { if (!isOpen) setIsOpen(true); }}
                 animate={{ width: isOpen ? 270 : 148, height: isOpen ? 326 : 48, borderRadius: isOpen ? 30 : 72 }}
                 whileHover={isOpen ? undefined : { scale: 1.04 }}

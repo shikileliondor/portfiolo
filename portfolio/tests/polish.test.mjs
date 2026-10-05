@@ -13,4 +13,6 @@ test('final polish includes accessibility and image performance safeguards', () 
     assert.match(page, /loading="lazy"/);
     assert.match(carousel, /loading="lazy"/);
     assert.match(carousel, /decoding="async"/);
+    assert.match(page, /data-responsive-polish="compact"/);
+    assert.match(carousel, /min-h-\[440px\]/);
 });

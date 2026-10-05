@@ -33,7 +33,7 @@ export function PhoneCarousel({ images, activeIndex, onActiveChange }: PhoneCaro
     const Phone = ({ item, position }: { item: ImageItem; position: 'left' | 'center' | 'right' }) => (
         <div
             className={position === 'center'
-                ? 'relative z-20 w-[230px] overflow-hidden rounded-[2.8rem] border-[8px] border-[#202328] bg-[#202328] shadow-[0_35px_70px_rgba(6,22,45,.28)] sm:w-[270px]'
+                ? 'relative z-20 w-[195px] overflow-hidden rounded-[2.4rem] border-[7px] border-[#202328] bg-[#202328] shadow-[0_28px_60px_rgba(6,22,45,.25)] sm:w-[240px] sm:rounded-[2.8rem] sm:border-[8px] lg:w-[270px]'
                 : `absolute top-12 z-10 hidden w-[205px] overflow-hidden rounded-[2.5rem] border-[7px] border-[#45484d] bg-[#45484d] opacity-75 shadow-2xl md:block ${position === 'left' ? 'left-[2%] -rotate-[11deg]' : 'right-[2%] rotate-[11deg]'}`}
         >
             <div className="absolute top-2 left-1/2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-[#202328]" />
@@ -45,7 +45,7 @@ export function PhoneCarousel({ images, activeIndex, onActiveChange }: PhoneCaro
 
     return (
         <div className="flex w-full flex-col items-center gap-7">
-            <div className="relative flex min-h-[520px] w-full max-w-[720px] items-center justify-center sm:min-h-[590px]">
+            <div className="relative flex min-h-[440px] w-full max-w-[720px] items-center justify-center sm:min-h-[520px] lg:min-h-[590px]">
                 {images.length > 1 ? <Phone item={images[previous]} position="left" /> : null}
                 <AnimatePresence initial={false} custom={direction} mode="popLayout">
                     <motion.div

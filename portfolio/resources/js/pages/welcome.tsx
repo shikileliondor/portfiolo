@@ -60,13 +60,14 @@ export default function Welcome() {
             >
                 <main
                     id="top"
+                    data-responsive-polish="compact"
                     className="relative min-h-screen scroll-smooth overflow-hidden bg-white text-[#111111] selection:bg-[#ff4d22] selection:text-white"
                 >
                     <motion.header
                         initial={{ opacity: 0, y: -18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.55, delay: 0.15 }}
-                        className="relative z-10 flex items-center justify-between px-5 py-5 sm:px-8 lg:px-12"
+                        className="relative z-10 flex items-center justify-between px-5 py-4 sm:px-8 sm:py-5 lg:px-12"
                     >
                         <a href="#top" className="text-lg font-semibold tracking-[-0.04em]">
                             BEYAM<span className="text-[#ff4d22]">.</span>
@@ -77,10 +78,10 @@ export default function Welcome() {
                         </div>
                     </motion.header>
 
-                    <section className="relative z-10 bg-white px-4 pt-2 pb-12 sm:px-6 sm:py-10 lg:px-8">
+                    <section className="relative z-10 bg-white px-3 pt-2 pb-10 sm:px-6 sm:py-10 lg:px-8">
                         <div
                             data-hero-layout="compact-dynamic"
-                            className="relative mx-auto min-h-[590px] max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[#06162d] text-white sm:min-h-[620px] sm:rounded-[3.5rem]"
+                            className="relative mx-auto min-h-[610px] max-w-[1500px] overflow-hidden rounded-[2rem] bg-[#06162d] text-white sm:min-h-[620px] sm:rounded-[3.5rem]"
                         >
                             <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(101,167,255,.09)_1px,transparent_1px),linear-gradient(90deg,rgba(101,167,255,.09)_1px,transparent_1px)] [background-size:48px_48px]" />
                             <motion.div
@@ -94,14 +95,14 @@ export default function Welcome() {
                                 transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
                             />
 
-                            <div className="relative z-10 grid min-h-[590px] items-center gap-12 px-6 py-12 sm:min-h-[620px] sm:px-12 lg:grid-cols-[0.95fr_1.05fr] lg:px-16 lg:py-14">
+                            <div className="relative z-10 grid min-h-[610px] items-center gap-10 px-5 py-9 sm:min-h-[620px] sm:px-12 sm:py-12 lg:grid-cols-[0.95fr_1.05fr] lg:px-16 lg:py-14">
                                 <motion.div
                                     initial={{ opacity: 0, x: -50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                                     className="relative z-20 max-w-xl"
                                 >
-                                    <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/65 backdrop-blur-md">
+                                    <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/65 backdrop-blur-md sm:mb-7 sm:px-4 sm:text-[10px] sm:tracking-[0.2em]">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#b7ff5a] shadow-[0_0_10px_#b7ff5a]" />
                                         Disponible pour de nouveaux projets
                                     </div>
@@ -109,11 +110,11 @@ export default function Welcome() {
                                         Yann-Morel
                                         <span className="ml-2 text-[#65a7ff] sm:ml-3">Effobi</span>
                                     </h1>
-                                    <p className="mt-5 max-w-md text-base leading-relaxed text-white/65 sm:text-lg">
+                                    <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65 sm:mt-5 sm:text-lg">
                                         Je conçois des expériences web et mobiles utiles, rapides et agréables à utiliser.
                                     </p>
 
-                                    <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+                                    <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:flex-wrap sm:gap-3">
                                         <a href="#projects" className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-sm font-bold text-[#06162d] transition duration-300 hover:-translate-y-1 hover:bg-[#65a7ff] hover:shadow-[0_14px_35px_rgba(101,167,255,.3)]">
                                             Voir mes projets
                                             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -127,7 +128,7 @@ export default function Welcome() {
                                         </a>
                                     </div>
 
-                                    <div className="mt-10 flex gap-8 border-t border-white/10 pt-6 text-xs sm:gap-14">
+                                    <div className="mt-7 flex gap-8 border-t border-white/10 pt-5 text-[11px] sm:mt-10 sm:gap-14 sm:pt-6 sm:text-xs">
                                         <div><span className="block uppercase tracking-[0.18em] text-white/35">Basé à</span><strong className="mt-2 block text-white/85">Abidjan, CI</strong></div>
                                         <div><span className="block uppercase tracking-[0.18em] text-white/35">Spécialité</span><strong className="mt-2 block text-white/85">Web & Mobile</strong></div>
                                     </div>
@@ -178,10 +179,10 @@ export default function Welcome() {
                     <section
                         id="services"
                         data-profile-layout="simple-editorial"
-                        className="relative z-10 scroll-mt-24 bg-white px-5 py-20 text-[#111111] sm:px-8 sm:py-28 lg:px-12"
+                        className="relative z-10 scroll-mt-24 bg-white px-5 py-16 text-[#111111] sm:px-8 sm:py-24 lg:px-12 lg:py-28"
                     >
                         <div className="mx-auto max-w-[1500px] border-t border-black/15 pt-8">
-                            <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+                            <div className="grid gap-10 sm:gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
                                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.55 }}>
                                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#357ce8]">À propos</p>
                                     <h2 className="mt-5 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl">
@@ -218,9 +219,9 @@ export default function Welcome() {
 
                     <section
                         id="projects"
-                        className="relative z-10 scroll-mt-24 bg-[#eeece5] px-5 py-20 text-[#2b2b2b] sm:px-8 sm:py-28 lg:px-12"
+                        className="relative z-10 scroll-mt-24 bg-[#eeece5] px-5 py-16 text-[#2b2b2b] sm:px-8 sm:py-24 lg:px-12 lg:py-28"
                     >
-                        <div className="mx-auto grid max-w-[1500px] items-center gap-10 lg:min-h-[620px] lg:grid-cols-[0.8fr_1.2fr] lg:gap-10">
+                        <div className="mx-auto grid max-w-[1500px] items-center gap-6 sm:gap-10 lg:min-h-[620px] lg:grid-cols-[0.8fr_1.2fr]">
                             <motion.div
                                 key={projects[activeProject].name}
                                 initial={{ opacity: 0, x: -30 }}
@@ -280,7 +281,7 @@ export default function Welcome() {
                             </div>
                         </div>
 
-                        <div className="mx-auto mt-12 max-w-[1500px] border-t border-black/10 pt-12 sm:mt-16 sm:pt-14">
+                        <div className="mx-auto mt-8 max-w-[1500px] border-t border-black/10 pt-10 sm:mt-16 sm:pt-14">
                             <div className="mb-10 max-w-2xl">
                                 <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#007ea7]">Réalisations web</p>
                                 <h3 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-6xl">Des expériences web utiles.</h3>
@@ -368,9 +369,9 @@ export default function Welcome() {
 
                     <section
                         id="ecosystem"
-                        className="relative z-10 scroll-mt-24 overflow-hidden bg-white px-5 py-20 text-[#111111] sm:px-8 sm:py-28 lg:px-12"
+                        className="relative z-10 scroll-mt-24 overflow-hidden bg-white px-5 py-16 text-[#111111] sm:px-8 sm:py-24 lg:px-12 lg:py-28"
                     >
-                        <div className="mx-auto grid max-w-[1500px] items-center gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+                            <div className="mx-auto grid max-w-[1500px] items-center gap-10 sm:gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}

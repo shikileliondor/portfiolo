@@ -38,7 +38,7 @@ export function PhoneCarousel({ images, activeIndex, onActiveChange }: PhoneCaro
         >
             <div className="absolute top-2 left-1/2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-[#202328]" />
             <div className="aspect-[9/19] overflow-hidden rounded-[2.15rem] bg-white">
-                <img src={item.src} alt={item.alt} className="h-full w-full object-cover object-top" />
+                <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="h-full w-full object-cover object-top" />
             </div>
         </div>
     );

@@ -1,22 +1,24 @@
 import { Head } from '@inertiajs/react';
 import AmourSunrisePreloader from '@/components/ui/amour-sunrise-preloader';
-import { FloatingDock } from '@/components/ui/floating-dock';
 import { Footer } from '@/components/ui/footer';
 import IntegrationCardDemo from '@/components/ui/integration-card';
+import LiquidMorphFloatingMenu from '@/components/ui/liquid-morph-floating-menu';
 import PhoneMockupBasic from '@/components/ui/phone-mockups-1';
-import { ArrowUpRight, BriefcaseBusiness, Code2, Download, Home, Mail, UserRound } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowUpRight, Code2, Download, Mail } from 'lucide-react';
+import { MotionConfig, motion } from 'motion/react';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { SiGithub } from 'react-icons/si';
 import { useState } from 'react';
 
 export default function Welcome() {
     const [activeProject, setActiveProject] = useState(0);
+    const scrollTo = (selector: string) => document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
     const navigation = [
-        { title: 'Accueil', icon: <Home className="h-full w-full" />, href: '#top' },
-        { title: 'Profil & compétences', icon: <UserRound className="h-full w-full" />, href: '#services' },
-        { title: 'Projets', icon: <BriefcaseBusiness className="h-full w-full" />, href: '#projects' },
-        { title: 'Écosystème', icon: <Code2 className="h-full w-full" />, href: '#ecosystem' },
+        { label: 'Accueil', onClick: () => scrollTo('#top') },
+        { label: 'À propos', onClick: () => scrollTo('#services') },
+        { label: 'Projets', onClick: () => scrollTo('#projects') },
+        { label: 'Technologies', onClick: () => scrollTo('#ecosystem') },
+        { label: 'Contact', onClick: () => scrollTo('#contact') },
     ];
 
     const projects = [
@@ -49,7 +51,8 @@ export default function Welcome() {
     return (
         <>
             <Head title="BEYAM — Portfolio" />
-            <AmourSunrisePreloader
+            <MotionConfig reducedMotion="user">
+              <AmourSunrisePreloader
                 word="BEYAM"
                 caption="PORTFOLIO — CRÉATIF"
                 height="100dvh"
@@ -330,6 +333,8 @@ export default function Welcome() {
                                                 <img
                                                     src={project.image}
                                                     alt={project.alt}
+                                                    loading="lazy"
+                                                    decoding="async"
                                                     className="aspect-[16/10] w-full object-cover object-top transition duration-700 group-hover:scale-[1.025]"
                                                 />
                                             </div>
@@ -363,7 +368,7 @@ export default function Welcome() {
 
                     <section
                         id="ecosystem"
-                        className="relative z-10 scroll-mt-24 overflow-hidden bg-white px-5 py-24 text-[#111111] sm:px-8 sm:py-32 lg:px-12"
+                        className="relative z-10 scroll-mt-24 overflow-hidden bg-white px-5 py-20 text-[#111111] sm:px-8 sm:py-28 lg:px-12"
                     >
                         <div className="mx-auto grid max-w-[1500px] items-center gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                             <motion.div
@@ -424,18 +429,12 @@ export default function Welcome() {
                         copyright={{ text: '© 2026 BEYAM', license: 'Conçu et développé à Abidjan.' }}
                     />
 
-                    <nav
-                        aria-label="Navigation principale"
-                        className="fixed top-4 right-4 z-50 md:top-5 md:right-auto md:left-1/2 md:-translate-x-1/2"
-                    >
-                        <FloatingDock
-                            items={navigation}
-                            desktopClassName="border border-white/10 bg-[#151515]/85 text-white shadow-2xl shadow-black/40 backdrop-blur-xl"
-                            mobileClassName="drop-shadow-2xl"
-                        />
+                    <nav aria-label="Navigation principale">
+                        <LiquidMorphFloatingMenu items={navigation} />
                     </nav>
                 </main>
-            </AmourSunrisePreloader>
+              </AmourSunrisePreloader>
+            </MotionConfig>
         </>
     );
 }

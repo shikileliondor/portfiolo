@@ -12,7 +12,7 @@ interface FooterProps {
 
 export function Footer({ logo, brandName, socialLinks, mainLinks, legalLinks, copyright }: FooterProps) {
     return (
-        <footer id="contact" className="scroll-mt-24 bg-[#07152e] px-5 pt-16 pb-6 text-white sm:px-8 lg:px-12 lg:pt-20 lg:pb-8">
+        <footer id="contact" className="scroll-mt-24 bg-[#07152e] px-5 pt-16 pb-28 text-white sm:px-8 lg:px-12 lg:pt-20 lg:pb-28">
             <div className="mx-auto max-w-[1500px]">
                 <div className="items-start justify-between md:flex">
                     <a href="#top" className="flex items-center gap-3" aria-label={brandName}>
